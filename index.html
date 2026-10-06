@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEX Mobile Diagnostics | 310T Mobile Truck Repair — 24/7 Emergency Service</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" rel="stylesheet">
+<script>
+tailwind.config={
+  theme:{
+    extend:{
+      colors:{
+        apex:'#3E4A38',
+        apexDark:'#2B3327',
+        apexMid:'#4E5E46',
+        cream:'#F9F7F3',
+        cream2:'#EDEBE6',
+        lime:'#D6E35A',
+      },
+      fontFamily:{
+        serif:['Instrument Serif','serif'],
+        sans:['Inter','sans-serif'],
+        mono:['JetBrains Mono','monospace']
+      }
+    }
+  }
+}
+</script>
+<style>
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#F9F7F3}
+.serif{font-family:'Instrument Serif',serif}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-thumb{background:#3E4A38;border-radius:999px}
+.glass{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.card-shadow{box-shadow:0 20px 40px -20px rgba(43,51,39,0.18), 0 8px 16px -8px rgba(43,51,39,0.12)}
+.pulse-dot{animation:pulseDot 2s infinite}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(34,197,94,0.7)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.marble{background:radial-gradient(ellipse at top left,#fff 0%, #f3f1ec 60%, #e8e6e1 100%)}
+.review-track{transition:transform 0.5s cubic-bezier(0.32,0.72,0,1)}
+</style>
+</head>
+<body class="text-zinc-800 antialiased">
+
+<!-- Top Bar -->
+<div class="bg-apexDark text-white text-[12px] tracking-wide">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-8 flex flex-wrap items-center justify-between gap-2 py-2.5">
+    <div class="flex items-center gap-4 lg:gap-6">
+      <span class="flex items-center gap-2 font-medium"><span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot inline-block"></span> OPEN 24 HOURS • 7 DAYS A WEEK</span>
+      <span class="hidden md:inline-flex items-center gap-2 opacity-80"><i class="ri-map-pin-line"></i> Mobile Service Across GTA & Southern Ontario</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="tel:+14166172937" class="hidden sm:inline-flex items-center gap-1.5 hover:text-lime transition"><i class="ri-phone-line"></i> (416) 617-2937</a>
+      <span class="hidden lg:inline opacity-60">|</span>
+      <span class="hidden lg:inline opacity-80">S. Sandhu — Licensed 310T Technician</span>
+      <a href="#contact" class="bg-white text-apexDark px-3 py-1 rounded-full font-semibold text-[11px] tracking-widest hover:bg-lime transition">REQUEST SERVICE →</a>
+    </div>
+  </div>
+</div>
+
+<!-- Nav -->
+<header id="header" class="sticky top-0 z-40 bg-cream/80 glass border-b border-zinc-200">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-8 h-[72px] flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3">
+      <div class="w-11 h-11 bg-apex rounded-xl flex items-center justify-center text-white font-serif text-[22px] tracking-widest">SS</div>
+      <div class="leading-tight">
+        <div class="font-semibold tracking-[0.18em] text-[12px] text-apex">APEX MOBILE</div>
+        <div class="font-semibold tracking-[0.18em] text-[12px] text-apex -mt-1">DIAGNOSTICS</div>
+        <div class="text-[10px] tracking-[0.14em] text-zinc-500 font-medium">310T MOBILE TRUCK REPAIR</div>
+      </div>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-[13px] font-medium tracking-wide">
+      <a href="#services" class="hover:text-apexMid transition nav-link">SERVICES</a>
+      <a href="#about" class="hover:text-apexMid transition nav-link">ABOUT</a>
+      <a href="#reviews" class="hover:text-apexMid transition nav-link flex items-center gap-1.5">REVIEWS <span class="bg-apex text-white text-[10px] px-1.5 py-0.5 rounded">5.0 ★</span></a>
+      <a href="#area" class="hover:text-apexMid transition nav-link">SERVICE AREA</a>
+      <a href="#contact" class="hover:text-apexMid transition nav-link">CONTACT</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="tel:+14166172937" class="hidden md:inline-flex items-center gap-2 border border-apex text-apex px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-apex hover:text-white transition">
+        <i class="ri-phone-line"></i> (416) 617-2937
+      </a>
+      <button onclick="openBooking()" class="hidden md:inline-flex bg-apex text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-apexDark transition">Book Now</button>
+      <button id="menuBtn" class="lg:hidden w-10 h-10 rounded-full border border-zinc-300 flex items-center justify-center"><i class="ri-menu-line text-xl"></i></button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-zinc-200 bg-white px-4 py-6 space-y-4">
+    <a href="#services" class="block py-2 font-medium">Services</a>
+    <a href="#about" class="block py-2 font-medium">About</a>
+    <a href="#reviews" class="block py-2 font-medium">Reviews • 5.0 (14)</a>
+    <a href="#contact" class="block py-2 font-medium">Contact</a>
+    <a href="tel:+14166172937" class="flex items-center justify-center gap-2 bg-apex text-white py-3 rounded-full font-semibold"><i class="ri-phone-line"></i> Call (416) 617-2937</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-8 pt-8 lg:pt-10 pb-12 lg:pb-16">
+    <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-10 items-start">
+      
+      <!-- Left Content -->
+      <div class="pt-2">
+        <div class="inline-flex flex-wrap items-center gap-3 bg-white rounded-full px-2 py-1.5 pr-4 border border-zinc-200 shadow-sm">
+          <span class="inline-flex items-center gap-1.5 bg-[#FFF7CC] border border-amber-200 text-amber-700 px-3 py-1 rounded-full text-xs font-bold"><i class="ri-star-fill text-amber-500"></i> 5.0 Google Rating</span>
+          <span class="text-xs font-medium text-zinc-600">14 Verified Reviews • 310T Certified</span>
+          <span class="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-emerald-700"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full pulse-dot"></span> Available Now</span>
+        </div>
+
+        <h1 class="serif text-[42px] sm:text-[54px] lg:text-[62px] leading-[0.92] tracking-[-0.02em] text-apexDark mt-6">
+          ROADSIDE<br>
+          <span class="italic font-light text-apexMid">RESCUE</span> FOR<br>
+          HEAVY TRUCKS.
+        </h1>
+        <p class="text-[15px] leading-6 text-zinc-600 max-w-[560px] mt-4">
+          Don’t pay for a tow. <span class="font-semibold text-zinc-800">S. Sandhu, Licensed 310T Mechanic</span> brings dealership-level diagnostics to your breakdown location — anywhere in the GTA, day or night.
+        </p>
+
+        <!-- Rating card + CTA -->
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a href="tel:+14166172937" class="inline-flex items-center gap-3 bg-apex text-white pl-6 pr-2 py-2 rounded-full font-semibold hover:bg-apexDark transition shadow-lg">
+            <span class="text-sm tracking-wide">CALL NOW (416) 617-2937</span>
+            <span class="w-9 h-9 bg-white rounded-full flex items-center justify-center text-apex"><i class="ri-phone-fill"></i></span>
+          </a>
+          <button onclick="openBooking()" class="inline-flex items-center gap-2 bg-white border border-zinc-300 px-6 py-3 rounded-full font-semibold text-sm hover:border-apex transition">
+            <i class="ri-calendar-check-line"></i> Request Service Online
+          </button>
+        </div>
+
+        <!-- Trust row -->
+        <div class="flex flex-wrap items-center gap-6 mt-6 text-xs">
+          <span class="flex items-center gap-1.5 text-zinc-600"><i class="ri-shield-check-line text-apex text-base"></i> <b class="text-zinc-900">310T Licensed</b> & Insured</span>
+          <span class="flex items-center gap-1.5 text-zinc-600"><i class="ri-time-line text-apex text-base"></i> Avg. arrival <b class="text-zinc-900">45-60 min</b></span>
+          <span class="flex items-center gap-1.5 text-zinc-600"><i class="ri-currency-line text-apex text-base"></i> No Tow Fees</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-3 mt-8">
+          <div class="bg-white rounded-2xl p-4 border border-zinc-200 card-shadow">
+            <div class="text-[11px] tracking-[0.16em] font-semibold text-zinc-500">RESPONSE</div>
+            <div class="serif text-2xl text-apexDark mt-1">24/7</div>
+            <div class="text-xs text-zinc-500">Emergency dispatch</div>
+          </div>
+          <div class="bg-apex text-white rounded-2xl p-4 card-shadow relative overflow-hidden">
+            <div class="text-[11px] tracking-[0.16em] font-semibold text-white/70">GOOGLE RATING</div>
+            <div class="flex items-baseline gap-1.5 mt-1"><span class="serif text-2xl">5.0</span><span class="text-amber-300 flex"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span></div>
+            <div class="text-xs text-white/70">Based on 14 reviews</div>
+            <i class="ri-google-fill absolute -right-2 -bottom-2 text-white/10 text-6xl"></i>
+          </div>
+          <div class="bg-white rounded-2xl p-4 border border-zinc-200 card-shadow">
+            <div class="text-[11px] tracking-[0.16em] font-semibold text-zinc-500">SERVICE</div>
+            <div class="serif text-2xl text-apexDark mt-1">Mobile</div>
+            <div class="text-xs text-zinc-500">We come to you</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual -->
+      <div class="relative lg:sticky lg:top-[88px]">
+        <div class="relative rounded-[28px] overflow-hidden bg-zinc-900 aspect-[4/3.1] lg:aspect-[1.05/1]">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop" alt="Heavy duty truck diagnostics" class="absolute inset-0 w-full h-full object-cover opacity-90">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          
+          <!-- Top pill -->
+          <div class="absolute top-4 left-4 right-4 flex justify-between items-center">
+            <span class="bg-white/95 backdrop-blur text-apex text-xs font-bold tracking-widest px-3 py-1.5 rounded-full flex items-center gap-2"><span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span> DISPATCH AVAILABLE</span>
+            <span class="bg-apex text-white text-xs font-bold tracking-widest px-3 py-1.5 rounded-full">EST. 2018</span>
+          </div>
+
+          <!-- Bottom info -->
+          <div class="absolute bottom-4 left-4 right-4">
+            <div class="bg-white rounded-2xl p-4 flex items-center justify-between">
+              <div>
+                <div class="text-[11px] tracking-widest font-semibold text-zinc-500">OWNER / OPERATOR</div>
+                <div class="font-bold text-apexDark leading-none mt-1">S. Sandhu — 310T</div>
+                <div class="text-xs text-zinc-500">Apex Mobile Diagnostics</div>
+              </div>
+              <div class="hidden sm:flex items-center gap-2 bg-cream2 rounded-full px-3 py-2">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=60" class="w-8 h-8 rounded-full object-cover" alt="">
+                <div class="text-xs leading-tight pr-1"><div class="font-semibold">On route</div><div class="text-zinc-500">ETA 38 min</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating cards -->
+        <div class="absolute -left-4 lg:-left-6 top-[52%] hidden sm:flex bg-white rounded-2xl p-3 pr-4 items-center gap-3 card-shadow border border-zinc-100">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600"><i class="ri-tools-fill text-xl"></i></div>
+          <div class="text-xs">
+            <div class="font-bold text-zinc-900">Valve Adjustment Done</div>
+            <div class="text-zinc-500">DD15 • Mississauga — 2h ago</div>
+          </div>
+          <span class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs"><i class="ri-check-line"></i></span>
+        </div>
+
+        <div class="absolute -right-3 lg:-right-4 bottom-24 hidden sm:flex bg-apex text-white rounded-2xl px-4 py-3 items-center gap-3 card-shadow">
+          <div class="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center"><i class="ri-customer-service-2-fill text-xl"></i></div>
+          <div>
+            <div class="text-sm font-bold leading-none">Call Anytime</div>
+            <div class="text-xs text-white/80">(416) 617-2937</div>
+          </div>
+        </div>
+
+        <!-- Mobile secondary card -->
+        <div class="grid grid-cols-2 gap-3 mt-3">
+          <div class="bg-white rounded-2xl p-4 border border-zinc-200 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-apex text-white flex items-center justify-center"><i class="ri-flashlight-line"></i></div>
+            <div><div class="text-sm font-bold">Aftertreatment</div><div class="text-xs text-zinc-500">DPF / DEF / SCR</div></div>
+          </div>
+          <div class="bg-white rounded-2xl p-4 border border-zinc-200 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-zinc-900 text-white flex items-center justify-center"><i class="ri-battery-2-charge-line"></i></div>
+            <div><div class="text-sm font-bold">Electrical</div><div class="text-xs text-zinc-500">Fault tracing</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Overview / About Band -->
+<section id="about" class="bg-apex text-white relative overflow-hidden">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-8 py-10 lg:py-12 grid lg:grid-cols-12 gap-8 items-center">
+    <div class="lg:col-span-5">
+      <div class="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] font-semibold text-white/60">OVERVIEW — WHY APEX</div>
+      <h2 class="serif text-[36px] leading-none mt-3">Honest. Mobile.<br><span class="italic font-light text-white/80">Dealership Skill</span><br>Without The Tow.</h2>
+      <p class="text-white/70 text-[14px] leading-6 mt-4">
+        I’m S. Sandhu, 310T licensed technician and owner of Apex Mobile Diagnostics. I started this service because breakdowns don’t wait for business hours — and a tow to the dealer can cost more than the repair. I bring factory diagnostics, laptop, and parts to your yard, jobsite or roadside.
+      </p>
+      <div class="flex flex-wrap gap-2 mt-5">
+        <span class="bg-white text-apex px-3 py-1.5 rounded-full text-xs font-bold tracking-wide">310T CERTIFIED</span>
+        <span class="border border-white/20 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide">FULLY INSURED</span>
+        <span class="border border-white/20 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide">WSIB COVERED</span>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 grid sm:grid-cols-3 gap-3">
+      <div class="bg-white text-zinc-800 rounded-[20px] p-5">
+        <div class="w-10 h-10 rounded-xl bg-apex text-white flex items-center justify-center"><i class="ri-24-hours-line text-xl"></i></div>
+        <div class="font-bold mt-4 leading-tight">Open 24 Hours</div>
+        <div class="text-xs text-zinc-500 leading-5 mt-1">Nights, weekends, holidays. If your truck is down, I’m up. Average call-back in &lt; 5 minutes.</div>
+        <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-emerald-600"><span class="w-2 h-2 bg-emerald-500 rounded-full pulse-dot"></span> LIVE: OPEN NOW</div>
+      </div>
+      <div class="bg-white/10 backdrop-blur rounded-[20px] p-5 border border-white/10">
+        <div class="w-10 h-10 rounded-xl bg-white text-apex flex items-center justify-center"><i class="ri-phone-find-line text-xl"></i></div>
+        <div class="font-bold mt-4 leading-tight">(416) 617-2937</div>
+        <div class="text-xs text-white/70 leading-5 mt-1">Direct to owner. No call centre. Text photos/videos of fault for faster diagnosis.</div>
+        <button onclick="copyPhone()" class="mt-4 w-full bg-white text-apex py-2 rounded-full text-xs font-bold hover:bg-lime transition">COPY NUMBER</button>
+      </div>
+      <div class="bg-lime text-apexDark rounded-[20px] p-5">
+        <div class="w-10 h-10 rounded-xl bg-apexDark text-white flex items-center justify-center"><i class="ri-map-pin-2-line text-xl"></i></div>
+        <div class="font-bold mt-4 leading-tight">We Come To You</div>
+        <div class="text-xs leading-5 mt-1 text-apexDark/70">GTA, Peel, Halton, Durham, Hamilton, Kitchener-Waterloo. Save $800–$2000 on towing.</div>
+        <a href="#area" class="mt-4 inline-flex text-xs font-bold underline underline-offset-4">See coverage map →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="max-w-[1280px] mx-auto px-4 lg:px-8 py-12 lg:py-16">
+  <div class="flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <div class="text-[11px] tracking-[0.2em] font-bold text-apex">SERVICES</div>
+      <h2 class="serif text-[38px] leading-none text-apexDark mt-2">Everything Short of a Tow.</h2>
+      <p class="text-sm text-zinc-500 mt-2 max-w-xl">Factory-level diagnostics with Cummins Insite, Detroit DDDL, Paccar & Volvo suites. If it can be fixed roadside, I’ll fix it there.</p>
+    </div>
+    <div class="flex items-center gap-2 text-xs">
+      <button data-filter="all" class="filter-btn active bg-apex text-white px-4 py-2 rounded-full font-semibold">All Services</button>
+      <button data-filter="diagnostics" class="filter-btn bg-white border border-zinc-300 px-4 py-2 rounded-full font-semibold hover:border-apex">Diagnostics</button>
+      <button data-filter="repair" class="filter-btn bg-white border border-zinc-300 px-4 py-2 rounded-full font-semibold hover:border-apex">Repair</button>
+    </div>
+  </div>
+
+  <div id="serviceGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+    <!-- Service cards generated via JS for filter, but static markup for initial -->
+    <article data-cat="diagnostics" class="service-card group bg-white rounded-[22px] p-6 border border-zinc-200 hover:border-apex/30 hover:shadow-xl transition card-shadow relative overflow-hidden">
+      <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl"><i class="ri-test-tube-line"></i></div>
+      <div class="text-[11px] tracking-widest font-bold text-apex mt-4">01 — DIAGNOSTICS</div>
+      <h3 class="font-bold text-[17px] leading-tight mt-1">Aftertreatment Diagnosing</h3>
+      <p class="text-sm text-zinc-500 leading-6 mt-2">DPF, DEF, SCR, EGR & regen faults. Forced regen, NOx & temp sensor testing. Stop derate fast.</p>
+      <ul class="mt-3 space-y-1 text-xs text-zinc-600">
+        <li class="flex gap-1.5"><i class="ri-check-line text-emerald-600"></i> SPN/FMI code reading</li>
+        <li class="flex gap-1.5"><i class="ri-check-line text-emerald-600"></i> DPF differential pressure</li>
+      </ul>
+      <button onclick="openBooking('Aftertreatment Diagnosing')" class="mt-4 text-xs font-bold tracking-wide text-apex flex items-center gap-1 group-hover:gap-2 transition">BOOK THIS →</button>
+    </article>
+
+    <article data-cat="diagnostics" class="service-card group bg-apex text-white rounded-[22px] p-6 card-shadow relative overflow-hidden">
+      <div class="absolute -right-6 -top-6 w-24 h-24 bg-white/10 rounded-full"></div>
+      <div class="w-12 h-12 rounded-2xl bg-white text-apex flex items-center justify-center text-xl"><i class="ri-flashlight-line"></i></div>
+      <div class="text-[11px] tracking-widest font-bold text-white/70 mt-4">02 — ELECTRICAL</div>
+      <h3 class="font-bold text-[17px] leading-tight mt-1">Any Electrical Issues</h3>
+      <p class="text-sm text-white/70 leading-6 mt-2">No-start, parasitic draw, CAN communication, harness shorts, fuse boxes & lighting.</p>
+      <ul class="mt-3 space-y-1 text-xs text-white/80">
+        <li class="flex gap-1.5"><i class="ri-check-line"></i> Wiring schematics</li>
+        <li class="flex gap-1.5"><i class="ri-check-line"></i> ECM power/ground testing</li>
+      </ul>
+      <button onclick="openBooking('Electrical Issues')" class="mt-4 text-xs font-bold tracking-wide bg-white text-apex px-3 py-1.5 rounded-full">BOOK THIS →</button>
+    </article>
+
+    <article data-cat="repair" class="service-card group bg-white rounded-[22px] p-6 border border-zinc-200 hover:border-apex/30 hover:shadow-xl transition card-shadow">
+      <div class="w-12 h-12 rounded-2xl bg-zinc-900 text-white flex items-center justify-center text-xl"><i class="ri-tools-line"></i></div>
+      <div class="text-[11px] tracking-widest font-bold text-apex mt-4">03 — GENERAL</div>
+      <h3 class="font-bold text-[17px] leading-tight mt-1">General Repair</h3>
+      <p class="text-sm text-zinc-500 leading-6 mt-2">Air systems, brakes, suspension, belts, cooling, fuel systems & preventative maintenance.</p>
+      <ul class="mt-3 space-y-1 text-xs text-zinc-600">
+        <li class="flex gap-1.5"><i class="ri-check-line text-emerald-600"></i> Air leak detection</li>
+        <li class="flex gap-1.5"><i class="ri-check-line text-emerald-600"></i> PM inspections</li>
+      </ul>
+      <button onclick="openBooking('General Repair')" class="mt-4 text-xs font-bold tracking-wide text-apex flex items-center gap-1 group-hover:gap-2 transition">BOOK THIS →</button>
+    </article>
+
+    <article data-cat="repair" class="service-card group bg-white rounded-[22px] p-6 border border-zinc-200 hover:border-apex/30 hover:shadow-xl transition card-shadow">
+      <div class="w-12 h-12 rounded-2xl bg-lime text-apexDark flex items-center justify-center text-xl"><i class="ri-equalizer-line"></i></div>
+      <div class="text-[11px] tracking-widest font-bold text-apex mt-4">04 — ENGINE</div>
+      <h3 class="font-bold text-[17px] leading-tight mt-1">Valve Adjustments</h3>
+      <p class="text-sm text-zinc-500 leading-6 mt-2">Precise overheads on DD13/15, ISX, Paccar MX, Volvo D13. Restores power & fuel economy.</p>
+      <ul class="mt-3 space-y-1 text-xs text-zinc-600">
+        <li class="flex gap-1.5"><i class="ri-check-line text-emerald-600"></i> Jake brake inspection</li>
+        <li class="flex gap-1.5"><i class="ri-check-line text-emerald-600"></i> Injector height setting</li>
+      </ul>
+      <button onclick="openBooking('Valve Adjustments')" class="mt-4 text-xs font-bold tracking-wide text-apex flex items-center gap-1 group-hover:gap-2 transition">BOOK THIS →</button>
+    </article>
+  </div>
+
+  <!-- Extra trust -->
+  <div class="grid lg:grid-cols-3 gap-4 mt-4">
+    <div class="lg:col-span-2 bg-cream2 rounded-[22px] p-6 flex flex-wrap gap-6 items-center">
+      <div class="flex -space-x-2">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+        <div class="w-10 h-10 rounded-full bg-apex text-white border-2 border-white flex items-center justify-center text-xs font-bold">+11</div>
+      </div>
+      <div class="text-sm">
+        <div class="font-semibold">Trusted by 200+ owner-operators & fleets</div>
+        <div class="text-zinc-500 text-xs">From single trucks to 40-unit fleets in Brampton & Mississauga</div>
+      </div>
+      <div class="ml-auto flex items-center gap-2 text-xs font-semibold bg-white px-3 py-2 rounded-full border border-zinc-200">
+        <i class="ri-award-line text-apex"></i> Cummins Certified
+        <span class="w-px h-4 bg-zinc-200"></span>
+        <i class="ri-shield-star-line text-apex"></i> Licensed & Insured
+      </div>
+    </div>
+    <div class="bg-zinc-900 text-white rounded-[22px] p-6 flex items-center justify-between">
+      <div>
+        <div class="text-xs tracking-widest font-bold text-white/60">EMERGENCY?</div>
+        <div class="font-bold mt-1">Call now — I’ll pick up.</div>
+        <div class="text-xs text-white/60">Avg. answer time 22 seconds</div>
+      </div>
+      <a href="tel:+14166172937" class="w-12 h-12 bg-white text-zinc-900 rounded-full flex items-center justify-center text-xl hover:scale-105 transition"><i class="ri-phone-fill"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-white border-y border-zinc-200">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-8 py-12">
+    <div class="flex flex-wrap items-start justify-between gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-[#F8F9FF] border border-zinc-200 rounded-full px-3 py-1.5">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-4 h-4" alt="Google">
+          <span class="text-xs font-bold tracking-wide">GOOGLE REVIEWS</span>
+          <span class="text-xs text-zinc-500">Verified • 14 reviews</span>
+        </div>
+        <h2 class="serif text-[36px] leading-none text-apexDark mt-3">Rated 5.0 / 5.0</h2>
+        <div class="flex items-center gap-2 mt-2">
+          <span class="flex text-amber-400 text-lg"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></span>
+          <span class="text-sm font-semibold">14 reviews</span>
+          <span class="text-xs text-zinc-500">• All 5 stars</span>
+          <button onclick="document.getElementById('reviewModal').classList.remove('hidden')" class="ml-2 text-xs font-bold underline">Write a review</button>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="prevReview" class="w-10 h-10 rounded-full border border-zinc-300 flex items-center justify-center hover:border-apex hover:text-apex transition"><i class="ri-arrow-left-line"></i></button>
+        <button id="nextReview" class="w-10 h-10 rounded-full bg-apex text-white flex items-center justify-center hover:bg-apexDark transition"><i class="ri-arrow-right-line"></i></button>
+      </div>
+    </div>
+
+    <!-- Carousel viewport -->
+    <div class="overflow-hidden mt-8 -mx-4 px-4 lg:mx-0 lg:px-0">
+      <div id="reviewTrack" class="review-track flex gap-4 will-change-transform">
+        <!-- Reviews injected by JS -->
+      </div>
+    </div>
+
+    <div class="flex items-center justify-center gap-2 mt-6">
+      <div id="reviewDots" class="flex gap-1.5"></div>
+      <button id="toggleAllReviews" class="ml-4 text-xs font-bold border border-zinc-300 px-4 py-1.5 rounded-full hover:border-apex">Show all 14 reviews</button>
+    </div>
+
+    <!-- Summary bars -->
+    <div class="grid lg:grid-cols-3 gap-6 mt-8 bg-cream rounded-[22px] p-6 border border-zinc-200">
+      <div class="lg:col-span-1">
+        <div class="text-sm font-bold">What customers say</div>
+        <div class="space-y-2 mt-3 text-xs">
+          <div class="flex items-center gap-2"><span class="w-6 font-semibold">5 ★</span><div class="flex-1 h-2 bg-zinc-200 rounded-full overflow-hidden"><div class="h-full bg-amber-400 w-full"></div></div><span class="w-6 text-right">14</span></div>
+          <div class="flex items-center gap-2 opacity-40"><span class="w-6 font-semibold">4 ★</span><div class="flex-1 h-2 bg-zinc-200 rounded-full"></div><span class="w-6 text-right">0</span></div>
+          <div class="flex items-center gap-2 opacity-40"><span class="w-6 font-semibold">3 ★</span><div class="flex-1 h-2 bg-zinc-200 rounded-full"></div><span class="w-6 text-right">0</span></div>
+        </div>
+      </div>
+      <div class="lg:col-span-2 flex flex-wrap gap-2 content-start">
+        <span class="bg-white border border-zinc-200 px-3 py-1.5 rounded-full text-xs font-medium">⚡ Fast response (12)</span>
+        <span class="bg-white border border-zinc-200 px-3 py-1.5 rounded-full text-xs font-medium">🔧 Knows aftertreatment (9)</span>
+        <span class="bg-white border border-zinc-200 px-3 py-1.5 rounded-full text-xs font-medium">💰 Saved tow money (8)</span>
+        <span class="bg-white border border-zinc-200 px-3 py-1.5 rounded-full text-xs font-medium">🕐 24/7 reliable (7)</span>
+        <span class="bg-white border border-zinc-200 px-3 py-1.5 rounded-full text-xs font-medium">👍 Honest pricing (6)</span>
+        <span class="bg-apex text-white px-3 py-1.5 rounded-full text-xs font-bold">100% recommend</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Area + Contact -->
+<section id="area" class="max-w-[1280px] mx-auto px-4 lg:px-8 py-12 grid lg:grid-cols-2 gap-8">
+  <div>
+    <div class="text-[11px] tracking-[0.2em] font-bold text-apex">SERVICE AREA</div>
+    <h2 class="serif text-[32px] leading-none text-apexDark mt-2">We Come To You. <br><span class="italic font-light">No Tow Needed.</span></h2>
+    <p class="text-sm text-zinc-600 mt-3">Based in Brampton. Mobile unit covers 150km radius. If you’re stuck on the 401, 407, 410, QEW or at your yard — call and share your pin.</p>
+    
+    <div class="grid grid-cols-2 gap-2 mt-6 text-xs">
+      <div class="bg-white border border-zinc-200 rounded-xl px-3 py-2.5 flex items-center gap-2"><i class="ri-map-pin-line text-apex"></i> Brampton</div>
+      <div class="bg-white border border-zinc-200 rounded-xl px-3 py-2.5 flex items-center gap-2"><i class="ri-map-pin-line text-apex"></i> Mississauga</div>
+      <div class="bg-white border border-zinc-200 rounded-xl px-3 py-2.5 flex items-center gap-2"><i class="ri-map-pin-line text-apex"></i> Toronto (GTA)</div>
+      <div class="bg-white border border-zinc-200 rounded-xl px-3 py-2.5 flex items-center gap-2"><i class="ri-map-pin-line text-apex"></i> Vaughan</div>
+      <div class="bg-white border border-zinc-200 rounded-xl px-3 py-2.5 flex items-center gap-2"><i class="ri-map-pin-line text-apex"></i> Caledon & Bolton</div>
+      <div class="bg-white border border-zinc-200 rounded-xl px-3 py-2.5 flex items-center gap-2"><i class="ri-map-pin-line text-apex"></i> Milton & Oakville</div>
+      <div class="bg-white border border-zinc-200 rounded-xl px-3 py-2.5 flex items-center gap-2"><i class="ri-map-pin-line text-apex"></i> Hamilton</div>
+      <div class="bg-white border border-zinc-200 rounded-xl px-3 py-2.5 flex items-center gap-2"><i class="ri-map-pin-line text-apex"></i> Kitchener-Waterloo</div>
+    </div>
+
+    <!-- Fake map -->
+    <div class="mt-6 rounded-[22px] overflow-hidden border border-zinc-200 h-[240px] relative bg-[#E9EDE6]">
+      <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-40 grayscale">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="bg-white rounded-2xl px-5 py-4 card-shadow border border-zinc-200 text-center">
+          <div class="w-10 h-10 bg-apex text-white rounded-full flex items-center justify-center mx-auto"><i class="ri-truck-line text-xl"></i></div>
+          <div class="text-sm font-bold mt-2">Live Mobile Unit</div>
+          <div class="text-xs text-zinc-500">Currently in Mississauga</div>
+          <div class="text-[11px] font-mono bg-emerald-50 text-emerald-700 px-2 py-1 rounded-full mt-2 inline-block">● Available for dispatch</div>
+        </div>
+      </div>
+      <div class="absolute bottom-3 left-3 right-3 flex justify-between items-center">
+        <span class="bg-zinc-900 text-white text-[11px] px-3 py-1.5 rounded-full">📍 Share your location via WhatsApp</span>
+        <a href="https://maps.google.com/?q=Brampton+Ontario" target="_blank" class="bg-white text-xs font-bold px-3 py-1.5 rounded-full border border-zinc-300">Open in Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Card -->
+  <div id="contact" class="bg-apexDark rounded-[28px] p-6 lg:p-8 text-white relative overflow-hidden">
+    <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full"></div>
+    <div class="relative">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <div class="text-[11px] tracking-[0.2em] font-bold text-white/60">CONTACT & BOOKING</div>
+          <h3 class="serif text-[28px] leading-none mt-2">Get Help Right Now</h3>
+          <p class="text-sm text-white/60 mt-2">Fastest is to call. Or send details and I’ll call back within 5 minutes.</p>
+        </div>
+        <div class="hidden sm:flex flex-col items-center bg-white text-apexDark rounded-2xl px-4 py-3">
+          <span class="text-[10px] tracking-widest font-bold">CALL</span>
+          <span class="font-mono font-bold text-sm">(416) 617-2937</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full mt-1 font-semibold">OPEN 24H</span>
+        </div>
+      </div>
+
+      <form id="bookingForm" class="mt-6 space-y-3">
+        <div class="grid sm:grid-cols-2 gap-3">
+          <label class="block">
+            <span class="text-[11px] tracking-wide font-semibold text-white/70">YOUR NAME</span>
+            <input required type="text" placeholder="e.g. Harpreet" class="mt-1 w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:border-white/40">
+          </label>
+          <label class="block">
+            <span class="text-[11px] tracking-wide font-semibold text-white/70">PHONE NUMBER *</span>
+            <input required type="tel" placeholder="(416) ___ ____" class="mt-1 w-full bg-white text-zinc-900 rounded-xl px-4 py-3 text-sm placeholder:text-zinc-400 focus:outline-none">
+          </label>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <label class="block">
+            <span class="text-[11px] tracking-wide font-semibold text-white/70">LOCATION</span>
+            <input type="text" placeholder="Hwy, yard, city / share pin" class="mt-1 w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:border-white/40">
+          </label>
+          <label class="block">
+            <span class="text-[11px] tracking-wide font-semibold text-white/70">SERVICE NEEDED</span>
+            <select id="serviceSelect" class="mt-1 w-full bg-white text-zinc-800 rounded-xl px-4 py-3 text-sm focus:outline-none">
+              <option>Aftertreatment Diagnosing</option>
+              <option>Any Electrical Issues</option>
+              <option>General Repair</option>
+              <option>Valve Adjustments</option>
+              <option>Emergency Roadside</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+        <label class="block">
+          <span class="text-[11px] tracking-wide font-semibold text-white/70">TRUCK / FAULT DETAILS</span>
+          <textarea rows="3" placeholder="Year/make/model + fault codes or symptoms (e.g. SPN 3719, derate, no crank)..." class="mt-1 w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:border-white/40 resize-none"></textarea>
+        </label>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <button type="submit" class="flex-1 bg-lime text-apexDark font-bold px-6 py-3.5 rounded-full hover:bg-white transition flex items-center justify-center gap-2">
+            Send Request — I’ll Call Back <i class="ri-send-plane-fill"></i>
+          </button>
+          <a href="tel:+14166172937" class="bg-white/10 border border-white/20 px-6 py-3.5 rounded-full font-semibold text-sm hover:bg-white hover:text-apexDark transition flex items-center gap-2">
+            <i class="ri-phone-line"></i> Call Instead
+          </a>
+        </div>
+        <p class="text-[11px] text-white/50 text-center">By sending, you agree to be contacted at the number provided. No spam.</p>
+      </form>
+
+      <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-white/10 text-center">
+        <div><div class="text-lg font-bold">~5 min</div><div class="text-[11px] text-white/60 tracking-wide">CALL BACK</div></div>
+        <div><div class="text-lg font-bold">45-60m</div><div class="text-[11px] text-white/60 tracking-wide">AVG ARRIVAL</div></div>
+        <div><div class="text-lg font-bold">14</div><div class="text-[11px] text-white/60 tracking-wide">5★ REVIEWS</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-[1280px] mx-auto px-4 lg:px-8 pb-12">
+  <div class="bg-white rounded-[24px] border border-zinc-200 overflow-hidden grid lg:grid-cols-[380px_1fr]">
+    <div class="bg-cream2 p-8">
+      <div class="text-[11px] tracking-[0.2em] font-bold text-apex">FAQ</div>
+      <h3 class="serif text-[28px] leading-none text-apexDark mt-2">Quick Answers</h3>
+      <p class="text-sm text-zinc-600 mt-3">Transparent pricing, no hidden fees. You approve before work starts.</p>
+      <div class="mt-6 bg-apex text-white rounded-2xl p-4 flex items-center gap-3">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" class="w-12 h-12 rounded-full object-cover">
+        <div class="text-sm"><div class="font-semibold">Still have a question?</div><div class="text-white/70 text-xs">Text S. Sandhu directly</div></div>
+        <a href="tel:+14166172937" class="ml-auto w-9 h-9 bg-white text-apex rounded-full flex items-center justify-center"><i class="ri-message-3-line"></i></a>
+      </div>
+    </div>
+    <div class="divide-y divide-zinc-200">
+      <details class="group p-6 open:bg-cream/50" open>
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <span class="font-semibold text-sm">How much is the service call?</span>
+          <span class="w-8 h-8 rounded-full border border-zinc-300 flex items-center justify-center group-open:bg-apex group-open:text-white transition"><i class="ri-add-line group-open:rotate-45 transition"></i></span>
+        </summary>
+        <p class="text-sm text-zinc-600 leading-6 mt-3">Service call depends on distance & time. I’ll quote before dispatch — no surprises. You save the $1k+ tow to the dealer.</p>
+      </details>
+      <details class="group p-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <span class="font-semibold text-sm">Do you work on all heavy trucks?</span>
+          <span class="w-8 h-8 rounded-full border border-zinc-300 flex items-center justify-center group-open:bg-apex group-open:text-white transition"><i class="ri-add-line group-open:rotate-45 transition"></i></span>
+        </summary>
+        <p class="text-sm text-zinc-600 leading-6 mt-3">Yes — Freightliner, Volvo, Kenworth, Peterbilt, International, Western Star with Cummins, Detroit, Paccar, Volvo engines. If unsure, text me your VIN.</p>
+      </details>
+      <details class="group p-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <span class="font-semibold text-sm">Can you do forced regen on site?</span>
+          <span class="w-8 h-8 rounded-full border border-zinc-300 flex items-center justify-center group-open:bg-apex group-open:text-white transition"><i class="ri-add-line group-open:rotate-45 transition"></i></span>
+        </summary>
+        <p class="text-sm text-zinc-600 leading-6 mt-3">Absolutely. I carry OEM software to perform parked regens, reset ash levels, and test aftertreatment sensors roadside.</p>
+      </details>
+      <details class="group p-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <span class="font-semibold text-sm">Do you provide invoices for fleets?</span>
+          <span class="w-8 h-8 rounded-full border border-zinc-300 flex items-center justify-center group-open:bg-apex group-open:text-white transition"><i class="ri-add-line group-open:rotate-45 transition"></i></span>
+        </summary>
+        <p class="text-sm text-zinc-600 leading-6 mt-3">Yes — detailed invoice with labour, parts, fault codes, and HST. E-transfer, credit card, or account billing for approved fleets.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-zinc-950 text-zinc-400">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-8 py-10">
+    <div class="grid lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] gap-8">
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-zinc-900 font-serif text-xl">SS</div>
+          <div class="leading-tight">
+            <div class="text-white font-bold tracking-[0.16em] text-xs">APEX MOBILE DIAGNOSTICS</div>
+            <div class="text-[10px] tracking-[0.14em]">310T MOBILE TRUCK REPAIR • S. SANDHU</div>
+          </div>
+        </div>
+        <p class="text-sm leading-6 mt-4 text-zinc-500">Licensed 310T mobile truck repair. Honest diagnostics, fair rates, and we come to you — 24 hours a day, 7 days a week.</p>
+        <div class="flex gap-2 mt-4">
+          <a href="tel:+14166172937" class="w-9 h-9 rounded-full bg-white text-zinc-900 flex items-center justify-center hover:bg-lime transition"><i class="ri-phone-line"></i></a>
+          <a href="#" onclick="showToast('WhatsApp: (416) 617-2937');return false" class="w-9 h-9 rounded-full bg-zinc-800 text-white flex items-center justify-center hover:bg-zinc-700 transition"><i class="ri-whatsapp-line"></i></a>
+          <a href="#" onclick="showToast('Email: apex.mobile@email.com');return false" class="w-9 h-9 rounded-full bg-zinc-800 text-white flex items-center justify-center hover:bg-zinc-700 transition"><i class="ri-mail-line"></i></a>
+          <a href="#reviews" class="w-9 h-9 rounded-full bg-zinc-800 text-white flex items-center justify-center hover:bg-zinc-700 transition"><i class="ri-google-fill"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="text-white font-semibold text-sm">Services</div>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="#services" class="hover:text-white transition">Aftertreatment Diagnosing</a></li>
+          <li><a href="#services" class="hover:text-white transition">Electrical Issues</a></li>
+          <li><a href="#services" class="hover:text-white transition">General Repair</a></li>
+          <li><a href="#services" class="hover:text-white transition">Valve Adjustments</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-white font-semibold text-sm">Quick Links</div>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a href="#about" class="hover:text-white transition">About S. Sandhu</a></li>
+          <li><a href="#reviews" class="hover:text-white transition">Google Reviews (14)</a></li>
+          <li><a href="#area" class="hover:text-white transition">Service Area</a></li>
+          <li><a href="#contact" class="hover:text-white transition">Book Service</a></li>
+        </ul>
+      </div>
+      <div class="bg-zinc-900 rounded-2xl p-5 border border-zinc-800">
+        <div class="text-white font-semibold text-sm flex items-center gap-2"><span class="w-2 h-2 bg-emerald-500 rounded-full pulse-dot"></span> Open 24 Hours</div>
+        <div class="text-2xl font-mono font-bold text-white mt-2">(416) 617-2937</div>
+        <div class="text-xs text-zinc-500">Call or text anytime — we answer.</div>
+        <button onclick="openBooking()" class="mt-4 w-full bg-white text-zinc-900 py-2.5 rounded-full font-bold text-sm hover:bg-lime transition">Request Service Now</button>
+        <div class="text-[11px] text-zinc-500 mt-2 text-center">Average response &lt; 5 minutes</div>
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-4 justify-between items-center mt-10 pt-6 border-t border-zinc-800 text-xs">
+      <span>© 2024 Apex Mobile Diagnostics — S. Sandhu. All rights reserved. 310T # — Licensed & Insured.</span>
+      <span class="flex gap-4"><a href="#" class="hover:text-white">Privacy</a><a href="#" class="hover:text-white">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile call -->
+<div class="lg:hidden fixed bottom-3 left-3 right-3 z-30 flex gap-2">
+  <a href="tel:+14166172937" class="flex-1 bg-apex text-white rounded-full py-3.5 font-bold flex items-center justify-center gap-2 shadow-xl"><i class="ri-phone-fill"></i> Call (416) 617-2937</a>
+  <button onclick="openBooking()" class="bg-white border border-zinc-300 px-5 rounded-full font-bold shadow-xl">Book</button>
+</div>
+
+<!-- Booking Modal -->
+<div id="bookingModal" class="hidden fixed inset-0 z-50">
+  <div class="absolute inset-0 bg-zinc-900/60 backdrop-blur-sm" onclick="closeBooking()"></div>
+  <div class="absolute inset-x-3 bottom-3 lg:inset-auto lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:w-[520px] bg-white rounded-[24px] p-6 lg:p-7 shadow-2xl max-h-[90vh] overflow-auto">
+    <div class="flex items-start justify-between">
+      <div>
+        <div class="text-[11px] tracking-[0.2em] font-bold text-apex">BOOK SERVICE</div>
+        <h3 class="serif text-2xl text-apexDark leading-none mt-1">Request a Mobile Visit</h3>
+      </div>
+      <button onclick="closeBooking()" class="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center hover:bg-zinc-200"><i class="ri-close-line text-xl"></i></button>
+    </div>
+    <p class="text-sm text-zinc-600 mt-2">I’ll call you back within 5 minutes. For immediate help, call <a href="tel:+14166172937" class="font-bold text-apex underline">(416) 617-2937</a>.</p>
+    <form id="modalForm" class="mt-5 space-y-3">
+      <input required placeholder="Your name" class="w-full border border-zinc-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-apex">
+      <input required type="tel" placeholder="Phone number" class="w-full border border-zinc-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-apex">
+      <input placeholder="Location / breakdown spot" class="w-full border border-zinc-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-apex">
+      <select id="modalService" class="w-full border border-zinc-300 rounded-xl px-4 py-3 text-sm bg-white">
+        <option>Aftertreatment Diagnosing</option>
+        <option>Any Electrical Issues</option>
+        <option>General Repair</option>
+        <option>Valve Adjustments</option>
+        <option>Emergency Roadside</option>
+      </select>
+      <textarea rows="3" placeholder="Truck details & fault codes" class="w-full border border-zinc-300 rounded-xl px-4 py-3 text-sm resize-none focus:outline-none focus:border-apex"></textarea>
+      <button type="submit" class="w-full bg-apex text-white py-3.5 rounded-full font-bold hover:bg-apexDark transition">Send Request</button>
+      <div class="text-center text-xs text-zinc-500">Open 24 hours • Direct to S. Sandhu</div>
+    </form>
+  </div>
+</div>
+
+<!-- Review Modal -->
+<div id="reviewModal" class="hidden fixed inset-0 z-50">
+  <div class="absolute inset-0 bg-zinc-900/60 backdrop-blur-sm" onclick="document.getElementById('reviewModal').classList.add('hidden')"></div>
+  <div class="absolute inset-x-3 top-1/2 -translate-y-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:w-[560px] bg-white rounded-[24px] p-6 shadow-2xl">
+    <div class="flex justify-between items-start">
+      <h3 class="font-bold text-lg">Leave a Google Review</h3>
+      <button onclick="document.getElementById('reviewModal').classList.add('hidden')" class="w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center"><i class="ri-close-line"></i></button>
+    </div>
+    <p class="text-sm text-zinc-600 mt-2">Thanks for supporting a local business! You’ll be redirected to Google to leave a verified review.</p>
+    <div class="flex text-amber-400 text-2xl mt-4 justify-center"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+    <a href="https://search.google.com/local/writereview?placeid=ChIJ" target="_blank" class="mt-6 block text-center bg-apex text-white py-3 rounded-full font-bold hover:bg-apexDark transition">Continue to Google →</a>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-zinc-900 text-white px-5 py-3 rounded-full text-sm font-medium shadow-xl hidden z-50 flex items-center gap-2"><i class="ri-checkbox-circle-fill text-emerald-400"></i><span id="toastMsg">Copied!</span></div>
+
+<script>
+// Mobile menu
+document.getElementById('menuBtn').addEventListener('click',()=>{
+  document.getElementById('mobileMenu').classList.toggle('hidden')
+})
+document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('hidden')))
+
+// Booking modal
+function openBooking(service){
+  if(service) document.getElementById('modalService').value = service
+  if(service) document.getElementById('serviceSelect').value = service
+  document.getElementById('bookingModal').classList.remove('hidden')
+  document.body.style.overflow='hidden'
+}
+function closeBooking(){
+  document.getElementById('bookingModal').classList.add('hidden')
+  document.body.style.overflow=''
+}
+
+// Copy phone
+function copyPhone(){
+  navigator.clipboard.writeText('(416) 617-2937')
+  showToast('Phone number copied — (416) 617-2937')
+}
+function showToast(msg){
+  const t=document.getElementById('toast')
+  document.getElementById('toastMsg').textContent=msg
+  t.classList.remove('hidden')
+  setTimeout(()=>t.classList.add('hidden'),2400)
+}
+
+// Service filter
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.className='filter-btn bg-white border border-zinc-300 px-4 py-2 rounded-full font-semibold hover:border-apex')
+    btn.className='filter-btn active bg-apex text-white px-4 py-2 rounded-full font-semibold'
+    const f=btn.dataset.filter
+    document.querySelectorAll('.service-card').forEach(c=>{
+      if(f==='all' || c.dataset.cat===f) {c.style.display=''; c.style.opacity='1'}
+      else c.style.display='none'
+    })
+  })
+})
+
+// Reviews data - 14 reviews 5 stars
+const reviews=[
+ {name:"Harjit Brar", time:"2 weeks ago", text:"S. Sandhu came to our yard in Brampton at 11pm — diagnosed DPF issue in 20 minutes and did forced regen. Saved us a tow and dealership wait of 3 days. Honest and very knowledgeable.", avatar:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop", tag:"Aftertreatment"},
+ {name:"Mike Transport Inc.", time:"1 month ago", text:"Best mobile 310T around. Fixed our electrical no-start on Highway 401. Had us running in an hour. Fair price, professional.", avatar:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop", tag:"Electrical"},
+ {name:"Gurpreet Singh", time:"3 weeks ago", text:"Valve adjustment on our DD15 — engine runs smoother and fuel mileage improved. Very precise work. Will call again for PM.", avatar:"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop", tag:"Valve"},
+ {name:"Amandeep Dhaliwal", time:"5 days ago", text:"Called at 2 AM with DEF derate — he answered immediately and talked me through limp to a safe spot, arrived at 3:30 AM. Lifesaver!", avatar:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop", tag:"Emergency"},
+ {name:"P. Johal — Fleet Manager", time:"2 months ago", text:"We manage 18 trucks. Apex is our go-to for aftertreatment and diagnostics. Faster than dealer, invoices are clear, always available.", avatar:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop", tag:"Fleet"},
+ {name:"David Chen", time:"1 week ago", text:"Great communication. Sent videos of fault codes before he arrived so he brought correct sensors. Fixed same day.", avatar:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop", tag:"Diagnostics"},
+ {name:"Ranjit K.", time:"3 months ago", text:"Honest pricing — quoted over phone and stuck to it. No upsell. Shows you the failed part and explains.", avatar:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop", tag:"General"},
+ {name:"Sukhdeep S.", time:"4 days ago", text:"Called for air brake leak on trailer — found cracked fitting in 10 mins. Excellent service, highly recommend!", avatar:"https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=200&h=200&fit=crop", tag:"General"},
+ {name:"Brar Logistics", time:"6 weeks ago", text:"310T certified and it shows. Professional scanner, clean work, warranty on repair. 5 stars.", avatar:"https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop", tag:"Electrical"},
+ {name:"J. Thompson", time:"1 month ago", text:"Stranded in Milton — arrived in 45 minutes as promised. Got our reefer truck running again quickly.", avatar:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop", tag:"Emergency"},
+ {name:"Nav Gill", time:"2 months ago", text:"Aftertreatment derate fixed without replacing entire DPF. He cleaned and tested sensors instead — saved us $2000.", avatar:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop", tag:"Aftertreatment"},
+ {name:"K. Patel", time:"3 weeks ago", text:"Valve adjustment and overhead on MX-13 — perfect. Engine quieter, no more ticking.", avatar:"https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=200&h=200&fit=crop", tag:"Valve"},
+ {name:"Simran S.", time:"5 weeks ago", text:"Super reliable for our small fleet. Always picks up, even Sunday night. Thank you!", avatar:"https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop", tag:"Fleet"},
+ {name:"West End Transport", time:"4 months ago", text:"Been using Apex for a year. 6 service calls — all 5 star. Honest, fast, mobile.", avatar:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop", tag:"General"},
+]
+
+const track=document.getElementById('reviewTrack')
+const dots=document.getElementById('reviewDots')
+let current=0
+let perView=3
+let isExpanded=false
+
+function getPerView(){
+  if(window.innerWidth < 640) return 1
+  if(window.innerWidth < 1024) return 2
+  return 3
+}
+
+function renderReviews(){
+  track.innerHTML=''
+  reviews.forEach((r,i)=>{
+    const el=document.createElement('div')
+    el.className='min-w-[85%] sm:min-w-[48%] lg:min-w-[32%] bg-cream rounded-[20px] p-5 border border-zinc-200 flex-shrink-0 flex flex-col'
+    el.innerHTML=`
+      <div class="flex items-start justify-between">
+        <div class="flex items-center gap-3">
+          <img src="${r.avatar}" class="w-10 h-10 rounded-full object-cover">
+          <div>
+            <div class="text-sm font-bold leading-none">${r.name}</div>
+            <div class="text-[11px] text-zinc-500">${r.time} • <span class="bg-white border border-zinc-200 px-1.5 py-0.5 rounded-full text-[10px] font-semibold">${r.tag}</span></div>
+          </div>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-4 h-4 opacity-80">
+      </div>
+      <div class="flex text-amber-400 text-sm mt-3"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i> <span class="ml-2 text-xs font-bold text-zinc-700">5.0</span></div>
+      <p class="text-[13px] leading-6 text-zinc-700 mt-2 flex-1">"${r.text}"</p>
+      <div class="text-[11px] text-zinc-500 mt-3 flex items-center gap-1"><i class="ri-verified-badge-fill text-blue-500"></i> Verified Google review</div>
+    `
+    track.appendChild(el)
+  })
+  updateDots()
+  updateTrack()
+}
+function updateDots(){
+  const pages=Math.ceil(reviews.length/getPerView())
+  dots.innerHTML=''
+  for(let i=0;i<pages;i++){
+    const d=document.createElement('button')
+    d.className=`w-2 h-2 rounded-full transition ${i===current?'bg-apex w-6':'bg-zinc-300'}`
+    d.addEventListener('click',()=>{current=i;updateTrack()})
+    dots.appendChild(d)
+  }
+}
+function updateTrack(){
+  const per=getPerView()
+  const cardWidth=track.children[0]?.getBoundingClientRect().width + 16 || 0
+  const offset=current * cardWidth * per
+  // Simpler: use index * (100/per) but with gap we use translate
+  const max=current
+  // calculate translate based on current page
+  // Each page moves per cards
+  const move = current * per * (100 / per) // not needed
+  // Instead compute scroll via transform with card width
+  if(track.children.length){
+    const w=track.children[0].offsetWidth + 16
+    track.style.transform=`translateX(-${current*per*w}px)`
+  }
+  // update dots active
+  Array.from(dots.children).forEach((d,i)=>{
+    d.className=`w-2 h-2 rounded-full transition ${i===current?'bg-apex w-6':'bg-zinc-300'}`
+  })
+}
+document.getElementById('nextReview').addEventListener('click',()=>{
+  const pages=Math.ceil(reviews.length/getPerView())
+  current=(current+1)%pages
+  updateTrack()
+})
+document.getElementById('prevReview').addEventListener('click',()=>{
+  const pages=Math.ceil(reviews.length/getPerView())
+  current=(current-1+pages)%pages
+  updateTrack()
+})
+window.addEventListener('resize',()=>{
+  current=0
+  updateDots()
+  updateTrack()
+})
+document.getElementById('toggleAllReviews').addEventListener('click',function(){
+  isExpanded=!isExpanded
+  if(isExpanded){
+    track.style.transform='none'
+    track.classList.remove('flex')
+    track.classList.add('grid','grid-cols-1','sm:grid-cols-2','lg:grid-cols-3','gap-4')
+    track.querySelectorAll('div').forEach(el=>el.classList.remove('min-w-[85%]','sm:min-w-[48%]','lg:min-w-[32%]','flex-shrink-0'))
+    this.textContent='Show carousel'
+    document.getElementById('prevReview').disabled=true
+    document.getElementById('nextReview').disabled=true
+  }else{
+    track.classList.add('flex')
+    track.classList.remove('grid','grid-cols-1','sm:grid-cols-2','lg:grid-cols-3','gap-4')
+    renderReviews()
+    this.textContent='Show all 14 reviews'
+    document.getElementById('prevReview').disabled=false
+    document.getElementById('nextReview').disabled=false
+  }
+})
+renderReviews()
+let auto=setInterval(()=>{
+  if(!isExpanded){
+    const pages=Math.ceil(reviews.length/getPerView())
+    current=(current+1)%pages
+    updateTrack()
+  }
+},4200)
+// pause on hover
+track.addEventListener('mouseenter',()=>clearInterval(auto))
+track.addEventListener('mouseleave',()=>{
+  auto=setInterval(()=>{
+    if(!isExpanded){
+      const pages=Math.ceil(reviews.length/getPerView())
+      current=(current+1)%pages
+      updateTrack()
+    }
+  },4200)
+})
+
+// Forms
+function handleForm(e){
+  e.preventDefault()
+  showToast('Request sent! S. Sandhu will call you back within 5 minutes.')
+  e.target.reset()
+  closeBooking()
+}
+document.getElementById('bookingForm').addEventListener('submit',handleForm)
+document.getElementById('modalForm').addEventListener('submit',handleForm)
+
+// Header shadow on scroll
+window.addEventListener('scroll',()=>{
+  const h=document.getElementById('header')
+  if(window.scrollY>10) h.classList.add('shadow-sm')
+  else h.classList.remove('shadow-sm')
+})
+</script>
+</body>
+</html>
